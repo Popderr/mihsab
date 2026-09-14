@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مِحسَب | تعلم جدول الضرب والجذور والأسس واختبر نفسك</title>
+<meta name="description" content="مِحسَب موقع عربي مجاني لتعلم ومراجعة جدول الضرب حتى 12، والجذور التربيعية، والأسس، مع اختبارات رياضيات عشوائية ومؤقتة تساعدك على التدريب ورفع سرعتك.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<link rel="canonical" href="https://mihsab.vercel.app/">
+
+<meta property="og:locale" content="ar_SA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="مِحسَب | تعلم جدول الضرب والجذور والأسس">
+<meta property="og:description" content="راجع جدول الضرب والجذور والأسس، ثم اختبر نفسك بأسئلة رياضيات عشوائية ومؤقتة.">
+<meta property="og:url" content="https://mihsab.vercel.app/">
+<meta property="og:site_name" content="مِحسَب">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="مِحسَب | تعلم جدول الضرب والجذور والأسس">
+<meta name="twitter:description" content="تعلّم الرياضيات وراجع جدول الضرب والجذور والأسس مع اختبارات سريعة.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "مِحسَب",
+  "url": "https://mihsab.vercel.app/",
+  "inLanguage": "ar",
+  "applicationCategory": "EducationalApplication",
+  "educationalUse": ["practice", "assessment"],
+  "description": "موقع عربي لتعلم ومراجعة جدول الضرب والجذور والأسس مع اختبارات رياضيات عشوائية ومؤقتة.",
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f4f6f9;color:#172033;}
+.container{width:92%;max-width:900px;margin:auto;padding:35px 0;}
+header{text-align:center;margin-bottom:25px;}
+.logo{font-size:26px;font-weight:bold;margin-bottom:20px;}
+h1{font-size:38px;margin:10px 0;}
+header p{color:#68758a;font-size:18px;}
+.tip{display:inline-block;background:white;border:1px solid #e1e6ed;border-radius:12px;padding:10px 14px;margin:5px;font-size:14px;}
+.card{background:white;border-radius:20px;padding:25px;margin:20px 0;border:1px solid #e1e6ed;box-shadow:0 8px 25px rgba(0,0,0,.04);}
+.final-card{border:2px solid #172033;}
+.section{color:#68758a;font-size:14px;font-weight:bold;}
+.final-section{color:#172033;}
+h2{margin:8px 0;}
+.muted{color:#748094;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:15px;}
+.item{background:#f6f8fa;border:1px solid #e5e9ef;padding:12px;border-radius:12px;text-align:center;font-weight:bold;}
+table{width:100%;border-collapse:collapse;margin-top:15px;}
+th,td{border:1px solid #e1e6ed;padding:8px;text-align:center;}
+th{background:#f3f5f8;}
+.quiz{border-top:1px solid #e5e9ef;margin-top:25px;padding-top:20px;}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.timer{background:#f0f3f7;padding:9px 13px;border-radius:10px;font-weight:bold;}
+button{font-family:inherit;font-size:16px;font-weight:bold;border:0;border-radius:11px;padding:10px 16px;cursor:pointer;}
+button:disabled{cursor:not-allowed;opacity:.8;}
+.start{background:#172033;color:white;}
+.question{padding:18px 0;border-bottom:1px solid #edf0f3;}
+.question-title{font-weight:bold;margin-bottom:12px;}
+.question-type{font-size:12px;color:#7a8494;margin-bottom:6px;}
+.options{display:flex;gap:8px;flex-wrap:wrap;}
+.option{background:#f6f8fa;border:1px solid #dfe5ec;min-width:90px;}
+.option.selected{background:#172033;color:white;}
+.finish{width:100%;margin-top:18px;background:#e9edf2;color:#172033;}
+.result{margin-top:18px;padding:15px;border-radius:12px;background:#edf8ef;font-weight:bold;text-align:center;font-size:18px;}
+.hidden{display:none;}
+footer{text-align:center;color:#7b8595;padding:25px;}
+@media(max-width:600px){
+  h1{font-size:30px;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .card{padding:18px;}
+  table{font-size:13px;}
+  .container{width:96%;}
+  th,td{padding:6px;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<div class="logo">Σ مِحسَب</div>
+<h1>تعلّم الجداول بثقة</h1>
+<p>تعلّم وراجع جدول الضرب حتى ١٢، والجذور التربيعية، والأسس، ثم اختبر نفسك في دقائق.</p>
+<div class="tip">⏱ كل اختبار مدته ٣ دقائق</div>
+<div class="tip">💡 الأسئلة تتغير في كل محاولة</div>
+</header>
+
+<section class="card">
+<div class="section">١ · الأساسيات</div>
+<h2>جدول الجذور المشهورة</h2>
+<p class="muted">12 جذراً</p>
+<div class="grid" id="rootsReview"></div>
+<div id="rootsQuiz"></div>
+</section>
+
+<section class="card">
+<div class="section">٢ · المراجعة</div>
+<h2>جدول الضرب إلى ١٢</h2>
+<p class="muted">12 × 12</p>
+<div id="timesTable"></div>
+<div id="multiplyQuiz"></div>
+</section>
+
+<section class="card">
+<div class="section">٣ · التثبيت</div>
+<h2>جدول الأسس المشهورة</h2>
+<p class="muted">التربيع والتكعيب</p>
+<div class="grid" id="powersReview"></div>
+<div id="powersQuiz"></div>
+</section>
+
+<section class="card final-card">
+<div class="section final-section">٤ · الاختبار النهائي</div>
+<h2>🔥 اختبار شامل</h2>
+<p class="muted">ضرب + جذور + أسس — 10 أسئلة</p>
+<div id="finalQuiz"></div>
+</section>
+
+<footer>مِحسَب — تعلّم القاعدة، ثم اختبر سرعتك ✦</footer>
+
+</div>
+
+<script>
+function arabic(number){
+  return String(number).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+}
+
+function shuffle(array){
+  let result=[...array];
+  for(let i=result.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [result[i],result[j]]=[result[j],result[i]];
+  }
+  return result;
+}
+
+const roots=[];
+for(let i=1;i<=12;i++){
+  roots.push({number:i*i,answer:i});
+}
+
+document.getElementById("rootsReview").innerHTML=
+roots.map(x=>`<div class="item">√${arabic(x.number)} = ${arabic(x.answer)}</div>`).join("");
+
+const powers=[];
+for(let i=1;i<=10;i++){
+  powers.push({base:i,power:2,answer:i**2});
+}
+for(let i=2;i<=6;i++){
+  powers.push({base:i,power:3,answer:i**3});
+}
+
+document.getElementById("powersReview").innerHTML=
+powers.map(x=>`<div class="item">${arabic(x.base)}${x.power===2?"²":"³"} = ${arabic(x.answer)}</div>`).join("");
+
+let table="<table>";
+table+="<tr><th>×</th>";
+for(let i=1;i<=12;i++) table+=`<th>${arabic(i)}</th>`;
+table+="</tr>";
+
+for(let r=1;r<=12;r++){
+  table+=`<tr><th>${arabic(r)}</th>`;
+  for(let c=1;c<=12;c++) table+=`<td>${arabic(r*c)}</td>`;
+  table+="</tr>";
+}
+table+="</table>";
+document.getElementById("timesTable").innerHTML=table;
+
+function options(correct){
+  let set=new Set([correct]);
+  while(set.size<4){
+    let difference=Math.floor(Math.random()*20)+1;
+    if(Math.random()<0.5) difference=-difference;
+    let value=correct+difference;
+    if(value>0) set.add(value);
+  }
+  return shuffle([...set]);
+}
+
+function createQuiz(element,type){
+  const container=document.getElementById(element);
+
+  container.innerHTML=`
+    <div class="quiz">
+      <div class="quiz-header">
+        <div>
+          <h3>${
+            type==="multiply" ? "اختبار جدول الضرب" :
+            type==="power" ? "اختبار الأسس" :
+            type==="root" ? "اختبار الجذور" :
+            "🔥 الاختبار النهائي"
+          }</h3>
+          <p class="muted">${
+            type==="final" ? "مكس عشوائي من الضرب والجذور والأسس" :
+            "5 أسئلة جديدة في كل محاولة"
+          }</p>
+        </div>
+        <div class="timer" id="${element}Timer">03:00</div>
+      </div>
+      <button class="start" id="${element}Start">ابدأ الاختبار</button>
+      <div id="${element}Body" class="hidden"></div>
+    </div>
+  `;
+
+  const start=document.getElementById(element+"Start");
+  const body=document.getElementById(element+"Body");
+  const timer=document.getElementById(element+"Timer");
+
+  let questions=[];
+  let selected=[];
+  let interval=null;
+  let seconds=180;
+  let finished=false;
+
+  start.onclick=function(){
+    clearInterval(interval);
+    seconds=180;
+    timer.textContent="03:00";
+    selected=[];
+    finished=false;
+
+    if(type==="multiply"){
+      let all=[];
+      for(let a=1;a<=12;a++){
+        for(let b=1;b<=12;b++){
+          all.push({
+            type:"ضرب",
+            text:`${arabic(a)} × ${arabic(b)} = ؟`,
+            answer:a*b
+          });
+        }
+      }
+      questions=shuffle(all).slice(0,5);
+    }
+
+    else if(type==="root"){
+      questions=shuffle(roots).slice(0,5).map(x=>({
+        type:"جذر",
+        text:`√${arabic(x.number)} = ؟`,
+        answer:x.answer
+      }));
+    }
+
+    else if(type==="power"){
+      questions=shuffle(powers).slice(0,5).map(x=>({
+        type:"أسس",
+        text:`${arabic(x.base)}${x.power===2?"²":"³"} = ؟`,
+        answer:x.answer
+      }));
+    }
+
+    else{
+      let multiplicationQuestions=[];
+      let rootQuestions=[];
+      let powerQuestions=[];
+
+      for(let a=1;a<=12;a++){
+        for(let b=1;b<=12;b++){
+          multiplicationQuestions.push({
+            type:"ضرب",
+            text:`${arabic(a)} × ${arabic(b)} = ؟`,
+            answer:a*b
+          });
+        }
+      }
+
+      rootQuestions=roots.map(x=>({
+        type:"جذر",
+        text:`√${arabic(x.number)} = ؟`,
+        answer:x.answer
+      }));
+
+      powerQuestions=powers.map(x=>({
+        type:"أسس",
+        text:`${arabic(x.base)}${x.power===2?"²":"³"} = ؟`,
+        answer:x.answer
+      }));
+
+      questions=shuffle([
+        ...shuffle(multiplicationQuestions).slice(0,3),
+        ...shuffle(rootQuestions).slice(0,3),
+        ...shuffle(powerQuestions).slice(0,4)
+      ]);
+    }
+
+    body.innerHTML=
+      questions.map((q,index)=>`
+        <div class="question">
+          <div class="question-type">${q.type}</div>
+          <div class="question-title">${arabic(index+1)} · ${q.text}</div>
+          <div class="options">
+            ${options(q.answer).map(option=>`
+              <button class="option" data-question="${index}" data-answer="${option}">
+                ${arabic(option)}
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      `).join("")
+      + `<button class="finish">إنهاء الاختبار وإظهار النتيجة</button>`;
+
+    body.classList.remove("hidden");
+
+    body.querySelectorAll(".option").forEach(button=>{
+      button.onclick=function(){
+        if(finished) return;
+        let index=Number(this.dataset.question);
+        selected[index]=Number(this.dataset.answer);
+
+        body.querySelectorAll(`.option[data-question="${index}"]`)
+          .forEach(x=>x.classList.remove("selected"));
+
+        this.classList.add("selected");
+      };
+    });
+
+    body.querySelector(".finish").onclick=finish;
+
+    interval=setInterval(()=>{
+      seconds--;
+
+      let minutes=Math.floor(seconds/60);
+      let remaining=seconds%60;
+
+      timer.textContent=
+        `${String(minutes).padStart(2,"0")}:${String(remaining).padStart(2,"0")}`;
+
+      if(seconds<=0){
+        finish();
+      }
+    },1000);
+
+    function finish(){
+      if(finished) return;
+      finished=true;
+
+      clearInterval(interval);
+
+      let correct=0;
+      questions.forEach((q,index)=>{
+        if(selected[index]===q.answer) correct++;
+      });
+
+      let percentage=Math.round((correct/questions.length)*100);
+
+      let result=document.createElement("div");
+      result.className="result";
+
+      if(correct===questions.length){
+        result.textContent=
+          `ممتاز! 🎉 النتيجة ${arabic(correct)}/${arabic(questions.length)} — ${arabic(percentage)}٪`;
+      }else if(percentage>=70){
+        result.textContent=
+          `أحسنت! 👍 النتيجة ${arabic(correct)}/${arabic(questions.length)} — ${arabic(percentage)}٪`;
+      }else if(percentage>=50){
+        result.textContent=
+          `جيد! 💪 النتيجة ${arabic(correct)}/${arabic(questions.length)} — ${arabic(percentage)}٪`;
+      }else{
+        result.textContent=
+          `تحتاج مراجعة أكثر 📚 النتيجة ${arabic(correct)}/${arabic(questions.length)} — ${arabic(percentage)}٪`;
+      }
+
+      body.appendChild(result);
+
+      body.querySelectorAll(".option").forEach(button=>{
+        button.disabled=true;
+      });
+
+      const finishBtn=body.querySelector(".finish");
+      if(finishBtn) finishBtn.disabled=true;
+
+      start.textContent="اختبار جديد";
+    }
+  };
+}
+
+createQuiz("rootsQuiz","root");
+createQuiz("multiplyQuiz","multiply");
+createQuiz("powersQuiz","power");
+createQuiz("finalQuiz","final");
+</script>
+</body>
+</html>
