@@ -67,6 +67,42 @@ button:disabled{cursor:not-allowed;opacity:.8;}
 .option.selected{background:#172033;color:white;}
 .finish{width:100%;margin-top:18px;background:#e9edf2;color:#172033;}
 .result{margin-top:18px;padding:15px;border-radius:12px;background:#edf8ef;font-weight:bold;text-align:center;font-size:18px;}
+
+.option.correct{
+background:#e8f7ed;
+color:#176b35;
+border-color:#8fd3a7;
+}
+.option.wrong{
+background:#fdecec;
+color:#a32323;
+border-color:#e7a2a2;
+}
+.answer-feedback{
+margin-top:10px;
+padding:10px 12px;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+}
+.answer-feedback.correct-feedback{
+background:#edf8ef;
+color:#176b35;
+}
+.answer-feedback.wrong-feedback{
+background:#fff0f0;
+color:#a32323;
+}
+.warning{
+margin-top:12px;
+padding:12px;
+border-radius:10px;
+background:#fff4df;
+color:#7a4b00;
+font-weight:bold;
+text-align:center;
+}
+
 .hidden{display:none;}
 footer{text-align:center;color:#7b8595;padding:25px;}
 @media(max-width:600px){
@@ -331,19 +367,79 @@ function createQuiz(element,type){
         `${String(minutes).padStart(2,"0")}:${String(remaining).padStart(2,"0")}`;
 
       if(seconds<=0){
+        clearInterval(interval);
+        timer.textContent="00:00";
         finish();
       }
     },1000);
 
     function finish(){
       if(finished) return;
-      finished=true;
 
+      // لا يسمح بإنهاء الاختبار قبل الإجابة عن جميع الأسئلة.
+      const unanswered=[];
+      questions.forEach((q,index)=>{
+        if(selected[index]===undefined) unanswered.push(index);
+      });
+
+      if(unanswered.length>0){
+        const oldWarning=body.querySelector(".warning");
+        if(oldWarning) oldWarning.remove();
+
+        const warning=document.createElement("div");
+        warning.className="warning";
+        warning.textContent=`⚠️ لازم تجاوب على جميع الأسئلة. باقي ${arabic(unanswered.length)} سؤال.`;
+
+        const finishBtn=body.querySelector(".finish");
+        finishBtn.before(warning);
+
+        const firstQuestion=body.querySelectorAll(".question")[unanswered[0]];
+        if(firstQuestion){
+          firstQuestion.scrollIntoView({behavior:"smooth",block:"center"});
+        }
+        return;
+      }
+
+      finished=true;
       clearInterval(interval);
 
+      const oldWarning=body.querySelector(".warning");
+      if(oldWarning) oldWarning.remove();
+
       let correct=0;
+
       questions.forEach((q,index)=>{
-        if(selected[index]===q.answer) correct++;
+        const questionEl=body.querySelectorAll(".question")[index];
+        const buttons=questionEl.querySelectorAll(".option");
+        const userAnswer=selected[index];
+
+        if(userAnswer===q.answer) correct++;
+
+        buttons.forEach(button=>{
+          const value=Number(button.dataset.answer);
+
+          if(value===q.answer){
+            button.classList.add("correct");
+          }
+
+          if(value===userAnswer && userAnswer!==q.answer){
+            button.classList.add("wrong");
+          }
+
+          button.disabled=true;
+        });
+
+        const feedback=document.createElement("div");
+
+        if(userAnswer===q.answer){
+          feedback.className="answer-feedback correct-feedback";
+          feedback.textContent=`✅ إجابتك صحيحة: ${arabic(q.answer)}`;
+        }else{
+          feedback.className="answer-feedback wrong-feedback";
+          feedback.textContent=`❌ إجابتك: ${arabic(userAnswer)} — الإجابة الصحيحة: ${arabic(q.answer)}`;
+        }
+
+        questionEl.appendChild(feedback);
       });
 
       let percentage=Math.round((correct/questions.length)*100);
@@ -366,10 +462,6 @@ function createQuiz(element,type){
       }
 
       body.appendChild(result);
-
-      body.querySelectorAll(".option").forEach(button=>{
-        button.disabled=true;
-      });
 
       const finishBtn=body.querySelector(".finish");
       if(finishBtn) finishBtn.disabled=true;
